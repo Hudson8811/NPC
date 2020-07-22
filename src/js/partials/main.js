@@ -72,19 +72,35 @@ function checkContent(element) {
     return true;
   }
 }
-
+let checkNumberTrigger = false;
 function checkNumber() {
-  if (checkContent(".number_trigger") === true) {
+  if (checkContent(".number_trigger") === true && !checkNumberTrigger) {
     outNum(23, 2000, "#number-1");
     outNum(340, 2400, "#number-2");
     outNum(400, 2600, "#number-3");
     outNumBig(60000, 3000, "#number-4");
-    $(document).off("scroll");
+    checkNumberTrigger = true;
+  }
+}
+
+let checkParalaxTrigger = false;
+
+function checkParalax() {
+  if (
+    checkContent(".footer_paralax_trigger") === true &&
+    !checkParalaxTrigger
+  ) {
+    var plx4 = new Rellax(".footer_paralax", {
+      speed: -2,
+    });
+    console.log("trigger");
+    checkParalaxTrigger = true;
   }
 }
 
 function check() {
   checkNumber();
+  checkParalax();
 }
 
 $(document).ready(function () {
@@ -142,15 +158,5 @@ $(document).ready(function () {
   $(".slider").slick({
     prevArrow: $(".slider_prev"),
     nextArrow: $(".slider_next"),
-  });
-
-  var plx4 = new Rellax(".footer_paralax", {
-    speed: -2,
-    center: true,
-  });
-
-  var plx4 = new Rellax(".footer_text", {
-    speed: 2,
-    center: true,
   });
 });
