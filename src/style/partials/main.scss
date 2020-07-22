@@ -690,6 +690,14 @@ header {
   left: 50%;
   margin-left: -5px;
 }
+
+@media screen and (min-width: 2100px) {
+  .footer_paralax,
+  .mb_paralax {
+    background-size: cover;
+  }
+}
+
 @media screen and (max-width: 1070px) {
   .rewive .slider_next,
   .rewive .slider_prev {
