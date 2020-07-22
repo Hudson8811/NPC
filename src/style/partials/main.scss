@@ -613,7 +613,7 @@ header {
   }
 
   .container2 {
-    padding: 39px 0 51px;
+    padding: 60px 0 60px;
   }
 
   &_title {
@@ -779,6 +779,10 @@ header {
       margin-left: 0;
     }
 
+    .mb_center_block {
+      padding-top: 80px;
+    }
+
     .mb_right_block {
       margin-top: 20px;
       max-width: 222px;
@@ -889,7 +893,7 @@ header {
   }
 
   .banner_block_img {
-    height: 150px;
+    height: 200px;
     background-attachment: scroll;
     background-position: center bottom;
 
