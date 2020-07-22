@@ -260,9 +260,6 @@ header {
   align-items: center;
   flex-wrap: wrap;
 
-  & + .banner_block {
-    margin-top: 50px;
-  }
   p.db {
     margin-top: 27px;
   }
@@ -300,6 +297,11 @@ header {
     display: block;
     width: 100%;
     margin-top: 55px;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -593,8 +595,9 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    top: 0;
+    top: 43px;
     z-index: 1;
+    background-color: #1745eb;
   }
 }
 @media screen and (max-width: 1070px) {

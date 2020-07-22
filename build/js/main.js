@@ -195,13 +195,13 @@ $(document).ready(function () {
     nextArrow: $(".slider_next"),
   });
 
-  var plx4 = new Rellax(".footer", {
-    speed: 3,
+  var plx4 = new Rellax(".footer_paralax", {
+    speed: -2,
     center: true,
   });
 
   var plx4 = new Rellax(".footer_text", {
-    speed: 1,
+    speed: 2,
     center: true,
   });
 });
