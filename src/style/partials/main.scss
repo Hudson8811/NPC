@@ -710,6 +710,11 @@ header {
     display: none !important;
   }
 }
+@media screen and (max-width: 955px) {
+  .footer_text {
+    padding-left: 20px;
+  }
+}
 
 @media screen and (max-width: 879px) {
   .rewive .slider_flex {
@@ -902,14 +907,6 @@ header {
 }
 
 @media screen and (max-width: 430px) {
-  .main_menu {
-    display: block;
-
-    .mobile {
-      display: none;
-    }
-  }
-
   .mb_heading,
   .section_title {
     font-size: 24px;
