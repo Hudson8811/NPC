@@ -196,10 +196,9 @@ header {
     top: 0;
     z-index: 1;
 
-    background-size: cover;
+    background-size: 100% 700px;
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: center -350px;
 
     &:before {
       content: "";
@@ -606,6 +605,9 @@ header {
 .footer {
   overflow: hidden;
   position: relative;
+  .container2 {
+    position: relative;
+  }
 
   .footer_bottom {
     padding: 20px 0 30px;
@@ -621,11 +623,11 @@ header {
   &_text {
     position: relative;
     z-index: 2;
+    padding-left: 107.5px;
   }
 
-  .container1 {
+  .container2 {
     padding: 39px 0 51px;
-    position: static;
   }
 
   &_title {
@@ -685,9 +687,9 @@ header {
     bottom: 0;
     top: 0;
     z-index: 1;
-    background-size: cover;
+    background-size: 100% 700px;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center 350px;
     background-repeat: no-repeat;
   }
 }
@@ -771,33 +773,115 @@ header {
 
     .mb_right_block {
       margin-top: 20px;
+      max-width: 300px;
     }
   }
 }
+.burger {
+  display: none;
+}
 
-@media screen and (max-width: 700px) {
-  .header_flex_wrapper {
+@media screen and (max-width: 750px) {
+  .burger {
     display: block;
-  }
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
 
-  .header_logo_wrapper {
-    padding: 0;
+    &_item {
+      width: 100%;
+      height: 2px;
+      background-color: #1745eb;
+      z-index: 20;
+      position: absolute;
+      left: 0;
+      transition: all 0.5s;
 
-    .logo {
-      position: relative;
-      border: 2px solid #1745eb;
-      margin: 20px auto;
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        margin-top: -1px;
+        transition: none;
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+
+    &.active {
+      .burger_item {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+          top: 50%;
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          top: 50%;
+        }
+      }
     }
   }
 
-  header nav {
-    width: 100%;
-    padding-left: 0;
+  .mb_paralax,
+  .footer_paralax {
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
   }
 
-  .header_logo_wrapper:after,
-  .header_logo_wrapper:before {
+  .header_logo_wrapper {
+    order: 1;
+    margin-left: auto;
+  }
+
+  header {
+    padding-bottom: 47px;
+
+    nav {
+      width: 100%;
+      padding-left: 0;
+      position: absolute;
+      left: 40px;
+      top: 10px;
+      max-width: 257px;
+    }
+  }
+
+  .main_menu {
     display: none;
+    z-index: 10;
+    padding: 20px;
+    background: #fff;
+
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+
+    &_item {
+      text-align: left;
+    }
+
+    .mobile {
+      display: none;
+    }
+  }
+
+  .main_menu_item + li {
+    margin-left: 0;
+  }
+
+  .banner_block_img {
+    height: 300px;
   }
 }
 
@@ -820,10 +904,6 @@ header {
 @media screen and (max-width: 430px) {
   .main_menu {
     display: block;
-
-    .main_menu_item + li {
-      margin-left: 0;
-    }
 
     .mobile {
       display: none;

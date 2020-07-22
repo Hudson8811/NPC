@@ -193,4 +193,9 @@ $(document).ready(function () {
     prevArrow: $(".slider_prev"),
     nextArrow: $(".slider_next"),
   });
+
+  $(document).on("click", ".burger", function () {
+    $(this).toggleClass("active");
+    $(".main_menu").slideToggle();
+  });
 });
