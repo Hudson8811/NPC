@@ -136,37 +136,19 @@ function checkNumber() {
 
 let checkParalaxTrigger = false;
 
-function checkParalax() {
-  if (
-    checkContent(".footer_paralax_trigger") === true &&
-    !checkParalaxTrigger
-  ) {
-    var plx4 = new Rellax(".footer_paralax", {
-      speed: -2,
-    });
-    console.log("trigger");
-    checkParalaxTrigger = true;
-  }
-}
-
 function check() {
   checkNumber();
-  checkParalax();
 }
 
 $(document).ready(function () {
   $("input[name='phone']").mask(" +7 (999) 999-99-99");
 
-  var plx1 = new Rellax(".mb_center_block", {
-    speed: 3,
-  });
+  $(".js--move").click(function (e) {
+    e.preventDefault();
+    var elementClick = $(this).attr("href");
+    var destination = $(elementClick).offset().top;
 
-  var plx2 = new Rellax(".mb_right_block", {
-    speed: 3,
-  });
-
-  var plx3 = new Rellax(".mb_paralax", {
-    speed: -3,
+    $("body, html").animate({ scrollTop: destination }, 1100);
   });
 
   $(document).scroll(function () {
@@ -207,6 +189,7 @@ $(document).ready(function () {
   });
 
   $(".slider").slick({
+    loop: false,
     prevArrow: $(".slider_prev"),
     nextArrow: $(".slider_next"),
   });

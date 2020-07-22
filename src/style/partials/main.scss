@@ -9,6 +9,7 @@ button,
 input,
 h1 {
   font-family: "Montserrat", sans-serif;
+  outline: none;
 }
 
 .container1 {
@@ -44,8 +45,18 @@ header {
     color: #1745eb;
     text-align: center;
     cursor: pointer;
+
     transition: all 0.5s;
 
+    a {
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 400;
+      color: #1745eb;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
     &:nth-child(1) {
       min-width: 71px;
     }
@@ -67,7 +78,9 @@ header {
     }
 
     &:hover {
-      font-weight: 600;
+      a {
+        font-weight: 600;
+      }
     }
 
     &:last-child {
@@ -113,6 +126,7 @@ header {
     width: 163px;
     height: 93px;
     border-bottom: 2px solid #1745eb;
+    object-fit: cover;
   }
 }
 
@@ -123,7 +137,8 @@ header {
 }
 
 .main_banner_section {
-  background: #1745eb;
+  background-color: #1745eb;
+
   overflow: hidden;
   border-top: 2px solid #1745eb;
   position: relative;
@@ -134,8 +149,12 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0 0 59px;
+    padding: 0 0 36px;
     position: relative;
+
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
   }
 }
 .bold {
@@ -154,8 +173,7 @@ header {
   &_paralax {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+
     display: block;
     position: absolute;
     left: 0;
@@ -163,6 +181,11 @@ header {
     bottom: 0;
     top: 0;
     z-index: 1;
+
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 
   &_right_block {
@@ -206,6 +229,17 @@ header {
     cursor: pointer;
     color: #000;
     margin-top: 22px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
   }
 
   &_heading {
@@ -298,6 +332,11 @@ header {
     width: 100%;
     margin-top: 55px;
     margin-bottom: 50px;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 
     &:last-child {
       margin-bottom: 0;
@@ -443,6 +482,12 @@ header {
   }
 
   .slider {
+    outline: none;
+
+    .item {
+      outline: none;
+    }
+
     &_flex {
       display: flex;
       justify-content: flex-start;
@@ -489,6 +534,17 @@ header {
       color: #1745eb;
       cursor: pointer;
       text-decoration: none;
+
+      &:before {
+        content: "";
+        display: block;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 2;
+      }
     }
 
     &_prev,
@@ -501,6 +557,13 @@ header {
       top: 50%;
       margin-top: -12px;
       cursor: pointer;
+      outline: none;
+
+      &.slick-hidden {
+        filter: grayscale(1);
+        opacity: 0.5;
+        cursor: auto;
+      }
     }
 
     &_prev {
@@ -589,8 +652,6 @@ header {
   &_paralax {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: bottom;
     display: block;
     position: absolute;
     left: 0;
@@ -598,7 +659,10 @@ header {
     bottom: 0;
     top: 0;
     z-index: 1;
-    background-color: #1745eb;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
