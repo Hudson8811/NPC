@@ -14,7 +14,7 @@ h1 {
 
 .container1 {
   max-width: 955px;
-  width: 98%;
+  width: 96%;
   margin: 0 auto;
   position: relative;
 }
@@ -22,6 +22,12 @@ h1 {
 header {
   position: relative;
   z-index: 4;
+  background-color: #fff;
+  transition: all 0.5s;
+  border-bottom: 2px solid #1745eb;
+
+  position: fixed;
+  width: 100%;
 
   nav {
     width: calc(100% - 163px);
@@ -131,16 +137,17 @@ header {
 }
 
 .container2 {
-  width: 98%;
+  width: 96%;
   max-width: 1170px;
   margin: 0 auto;
 }
 
 .main_banner_section {
+  padding-top: 47px;
   background-color: #1745eb;
 
   overflow: hidden;
-  border-top: 2px solid #1745eb;
+
   position: relative;
   box-sizing: border-box;
   z-index: 0;
@@ -170,17 +177,7 @@ header {
 }
 
 .footer_paralax {
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #1745eb;
-    opacity: 0.8;
-  }
+  background-repeat: no-repeat;
 }
 
 .mb {
@@ -196,21 +193,10 @@ header {
     top: 0;
     z-index: 1;
 
-    background-size: 100% 700px;
+    background-size: 1920px 700px;
     background-attachment: fixed;
     background-position: center -350px;
-
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #1745eb;
-      opacity: 0.8;
-    }
+    background-repeat: no-repeat;
   }
 
   &_right_block {
@@ -313,7 +299,7 @@ header {
 .banner_block {
   margin: 0 auto;
   max-width: 1170px;
-  width: 98%;
+  width: 96%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -687,9 +673,9 @@ header {
     bottom: 0;
     top: 0;
     z-index: 1;
-    background-size: 100% 700px;
+    background-size: 1920px 700px;
     background-attachment: fixed;
-    background-position: center 350px;
+    background-position: center 250px;
     background-repeat: no-repeat;
   }
 }
@@ -717,6 +703,15 @@ header {
 }
 
 @media screen and (max-width: 879px) {
+  .rewive .slider_text_block,
+  .footer_text {
+    padding-left: 0;
+  }
+  .mb_paralax {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
   .rewive .slider_flex {
     display: block;
 
@@ -753,15 +748,15 @@ header {
   }
 
   .banner_block div:nth-child(1) {
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .banner_block div:nth-child(2) {
-    padding-right: 20px;
+    padding-right: 0;
   }
 
   .company_section .section_title {
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .main_banner_section .container2 {
@@ -778,7 +773,7 @@ header {
 
     .mb_right_block {
       margin-top: 20px;
-      max-width: 300px;
+      max-width: 222px;
     }
   }
 }
@@ -848,7 +843,7 @@ header {
 
   .header_logo_wrapper {
     order: 1;
-    margin-left: auto;
+    margin: 0 auto;
   }
 
   header {
@@ -886,16 +881,29 @@ header {
   }
 
   .banner_block_img {
-    height: 300px;
+    height: 150px;
+    background-attachment: scroll;
+    background-position: center bottom;
+
+    &:nth-child(5) {
+      background-position: center top;
+    }
   }
 }
 
 @media screen and (max-width: 580px) {
   .banner_block {
-    display: block;
+    flex-direction: column;
     .banner_block_blue-text,
     .banner_block_text {
       width: 100%;
+    }
+    .banner_block_blue-text {
+      order: 1;
+      margin-top: 30px;
+    }
+    .banner_block_text {
+      order: 0;
     }
   }
 
