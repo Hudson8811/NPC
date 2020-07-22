@@ -195,7 +195,19 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".burger", function () {
-    $(this).toggleClass("active");
-    $(".main_menu").slideToggle();
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
+      $(".main_menu").slideDown();
+    } else {
+      $(this).removeClass("active");
+      $(".main_menu").slideUp();
+    }
+  });
+
+  $(document).on("click", ".main_menu_item", function () {
+    if ($(".burger").hasClass("active")) {
+      $(".burger").removeClass("active");
+      $(".main_menu").slideUp();
+    }
   });
 });
