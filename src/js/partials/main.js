@@ -154,10 +154,10 @@ $(document).ready(function () {
     if (window.innerWidth < 751) {
       if (!$(this).hasClass("active")) {
         $(this).addClass("active");
-        $(".main_menu").addClass("active");
+        $("nav").addClass("active");
       } else {
         $(this).removeClass("active");
-        $(".main_menu").removeClass("active");
+        $("nav").removeClass("active");
       }
     }
   });
@@ -166,7 +166,7 @@ $(document).ready(function () {
     if (window.innerWidth < 751) {
       if ($(".burger").hasClass("active")) {
         $(".burger").removeClass("active");
-        $(".main_menu").removeClass("active");
+        $("nav").removeClass("active");
       }
     }
   });

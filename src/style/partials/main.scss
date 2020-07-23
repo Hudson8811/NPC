@@ -879,6 +879,12 @@ header {
       position: fixed;
       left: 0;
       top: 0;
+      transform: translateX(-200%);
+      transition: transform 0.5s;
+
+      &.active {
+        transform: translateX(0);
+      }
     }
   }
 
@@ -891,8 +897,6 @@ header {
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
     height: 100vh;
     box-sizing: border-box;
-    transform: translateX(-200%);
-    transition: transform 0.5s;
 
     &_item {
       text-align: left;
@@ -912,10 +916,6 @@ header {
 
     .mobile {
       display: none;
-    }
-
-    &.active {
-      transform: translateX(0);
     }
   }
 
