@@ -519,10 +519,17 @@ header {
     &_img_block {
       width: 100%;
       max-width: 462px;
+      height: 268px;
+      object-fit: cover;
     }
 
     &_text_block {
       padding-left: 33px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     &_heading {
@@ -531,7 +538,6 @@ header {
       color: #1745eb;
       font-weight: bold;
       display: block;
-      margin-bottom: 30px;
     }
 
     &_discription {
@@ -539,7 +545,12 @@ header {
       line-height: 21px;
       color: #000;
       display: block;
-      margin-bottom: 28px;
+      margin-bottom: auto;
+      margin-top: auto;
+
+      @media screen and (max-width: 879px) {
+        margin: 30px 0;
+      }
     }
 
     &_date {
@@ -712,7 +723,17 @@ header {
 @media screen and (max-width: 1070px) {
   .rewive .slider_next,
   .rewive .slider_prev {
-    display: none !important;
+    z-index: 1;
+  }
+
+  .rewive .slider_prev {
+    left: 20px;
+    top: 220px;
+  }
+
+  .rewive .slider_next {
+    right: 20px;
+    top: 220px;
   }
 }
 @media screen and (max-width: 955px) {
