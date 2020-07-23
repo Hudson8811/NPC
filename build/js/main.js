@@ -146,7 +146,7 @@ $(document).ready(function () {
   $(".js--move").click(function (e) {
     e.preventDefault();
     var elementClick = $(this).attr("href");
-    var destination = $(elementClick).offset().top - 90;
+    var destination = $(elementClick).offset().top - 80;
 
     $("body, html").animate({ scrollTop: destination }, 1100);
   });
