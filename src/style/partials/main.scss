@@ -592,7 +592,8 @@ header {
       cursor: pointer;
       outline: none;
 
-      &.slick-disabled {
+      &.slick-disabled,
+      &.slick-hidden {
         filter: grayscale(1);
         opacity: 0.5;
         cursor: auto;
