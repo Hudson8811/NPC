@@ -819,6 +819,10 @@ header {
     .mb_right_block {
       margin-top: 20px;
       max-width: 222px;
+
+      .db {
+        display: block;
+      }
     }
   }
 }
