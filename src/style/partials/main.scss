@@ -163,6 +163,12 @@ header {
     background-size: cover;
     background-attachment: fixed;
   }
+
+  &:hover {
+    .mb_link {
+      color: #fff;
+    }
+  }
 }
 .bold {
   font-weight: bold;
@@ -174,6 +180,10 @@ header {
   height: 0;
   margin: 0;
   padding: 0;
+
+  @media screen and (max-width: 879px) {
+    display: none;
+  }
 }
 
 .footer_paralax {
@@ -228,7 +238,6 @@ header {
     text-transform: uppercase;
 
     .bold {
-      display: block;
     }
   }
 
@@ -240,6 +249,7 @@ header {
     cursor: pointer;
     color: #000;
     margin-top: 22px;
+    transition: 0.5s;
 
     &:before {
       content: "";
@@ -497,6 +507,7 @@ header {
 
     .item {
       outline: none;
+      position: relative;
     }
 
     &_flex {
@@ -570,7 +581,7 @@ header {
       cursor: pointer;
       outline: none;
 
-      &.slick-hidden {
+      &.slick-disabled {
         filter: grayscale(1);
         opacity: 0.5;
         cursor: auto;
@@ -802,6 +813,7 @@ header {
     top: 10px;
     left: 10px;
     cursor: pointer;
+    z-index: 200;
 
     &_item {
       width: 100%;
@@ -862,29 +874,48 @@ header {
     padding-bottom: 47px;
 
     nav {
-      width: 100%;
+      width: 100vw;
       padding-left: 0;
-      position: absolute;
-      left: 40px;
-      top: 10px;
-      max-width: 257px;
+      position: fixed;
+      left: 0;
+      top: 0;
     }
   }
 
   .main_menu {
-    display: none;
+    display: block;
     z-index: 10;
-    padding: 20px;
+    padding: 40px;
+    padding-top: 70px;
     background: #fff;
-
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    box-sizing: border-box;
+    transform: translateX(-200%);
+    transition: transform 0.5s;
 
     &_item {
       text-align: left;
+
+      margin-bottom: 30px;
+
+      a {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      &:last-child {
+        padding-top: 30px;
+        border-top: 1px solid #1745eb;
+      }
     }
 
     .mobile {
       display: none;
+    }
+
+    &.active {
+      transform: translateX(0);
     }
   }
 
@@ -899,6 +930,17 @@ header {
 
     &:nth-child(5) {
       background-position: center top;
+    }
+  }
+
+  .footer_top {
+    height: 100vh;
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
     }
   }
 }

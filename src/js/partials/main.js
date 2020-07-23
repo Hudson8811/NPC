@@ -95,7 +95,7 @@ $(document).ready(function () {
   $(".js--move").click(function (e) {
     e.preventDefault();
     var elementClick = $(this).attr("href");
-    var destination = $(elementClick).offset().top;
+    var destination = $(elementClick).offset().top - 90;
 
     $("body, html").animate({ scrollTop: destination }, 1100);
   });
@@ -145,7 +145,7 @@ $(document).ready(function () {
   });
 
   $(".slider").slick({
-    loop: false,
+    infinite: false,
     prevArrow: $(".slider_prev"),
     nextArrow: $(".slider_next"),
   });
@@ -154,10 +154,10 @@ $(document).ready(function () {
     if (window.innerWidth < 751) {
       if (!$(this).hasClass("active")) {
         $(this).addClass("active");
-        $(".main_menu").slideDown();
+        $(".main_menu").addClass("active");
       } else {
         $(this).removeClass("active");
-        $(".main_menu").slideUp();
+        $(".main_menu").removeClass("active");
       }
     }
   });
@@ -166,7 +166,7 @@ $(document).ready(function () {
     if (window.innerWidth < 751) {
       if ($(".burger").hasClass("active")) {
         $(".burger").removeClass("active");
-        $(".main_menu").slideUp();
+        $(".main_menu").removeClass("active");
       }
     }
   });
