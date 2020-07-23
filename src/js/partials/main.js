@@ -17,7 +17,7 @@ function outNum(number, time, element) {
 function outNumBig(number, time, element) {
   const wub_num = number;
   const wub_time = time; //ms
-  const wub_step = 100;
+  const wub_step = 500;
   let wub_el = document.querySelector(element);
   let wub_n = 0;
   let wub_t = Math.round(wub_time / (wub_num / wub_step));
@@ -75,10 +75,10 @@ function checkContent(element) {
 let checkNumberTrigger = false;
 function checkNumber() {
   if (checkContent(".number_trigger") === true && !checkNumberTrigger) {
-    outNum(23, 2000, "#number-1");
-    outNum(340, 2400, "#number-2");
-    outNum(400, 2600, "#number-3");
-    outNumBig(60000, 3000, "#number-4");
+    outNum(23, 1000, "#number-1");
+    outNum(340, 100, "#number-2");
+    outNum(400, 100, "#number-3");
+    outNumBig(60000, 1000, "#number-4");
     checkNumberTrigger = true;
   }
 }
